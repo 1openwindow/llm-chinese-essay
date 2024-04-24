@@ -6,7 +6,7 @@
 
 | 论文ID | 标题 | 原文链接 | 发布时间 |
 | ------ | ---- | -------- | -------- |
-| 2404.13033 | [LLMs知道他们需要什么：利用缺失信息引导框架来增强检索增强生成](https://1openwindow.github.io/llm-chinese-essay/essay/2404.13033v1/) | [原文](https://arxiv.org/html/2404.13033v1) | 2024-04-22 |
+| 2404.13033 | [LLMs知道他们需要什么：利用缺失信息引导框架来增强检索增强生成](https://1openwindow.github.io/llm-chinese-essay/essay/2404_13033v1/) | [原文](https://arxiv.org/html/2404.13033v1) | 2024-04-22 |
 | 2404.13033 | [样本设计工程：LLM下游微调的良好样本的实证研究](https://1openwindow.github.io/llm-chinese-essay/essay/2404_13033v1/) | [原文](https://arxiv.org/html/2404.13033v1) | 2024-04-19 |
 | 2404.07749 | [注释作为自然逻辑的中心：通过注释视角改进代码生成](https://1openwindow.github.io/llm-chinese-essay/essay/2404_07549v1/) | [原文](https://arxiv.org/html/2404.07549v1) | 2024-04-11 |
 
