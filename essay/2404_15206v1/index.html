@@ -202,7 +202,7 @@
                 <div class="ltx_para" id="p1">
                     <p class="ltx_p" id="p1.1"><span class="ltx_text ltx_ulem_uline" id="p1.1.1"></span></p>
                 </div>
-                <h1 class="ltx_title ltx_title_document">指导调整是否使LLMs更加一致？</h1>
+                <h1 class="ltx_title ltx_title_document">指导微调是否使LLMs更加一致？</h1>
                 <div class="ltx_authors">
                     <span class="ltx_creator ltx_role_author">
                         <span class="ltx_personname">Constanza Fierro   Jiaang Li     Anders Søgaard
@@ -213,11 +213,11 @@
                 </div>
                 <div class="ltx_abstract">
                     <h6 class="ltx_title ltx_title_abstract">摘要</h6>
-                    <p class="ltx_p" id="id2.id1">指令调整的目的是实现零射击性能，但指令调整也已被证明能够改善思维链和价值对齐<cite
+                    <p class="ltx_p" id="id2.id1">指令微调的目的是实现零样本性能，但指令微调也已被证明能够改善思维链和价值对齐<cite
                             class="ltx_cite ltx_citemacro_cite">Si et al. (<a class="ltx_ref"
                                 href="https://arxiv.org/html/2404.15206v1#bib.bib30"
                                 title="">2023</a>)</cite>。在这里，我们考虑对<span class="ltx_text ltx_font_italic"
-                            id="id2.id1.1">一致性</span>的影响，即语言模型对输入中的小扰动的敏感性。我们将10个经过指令调整的LLaMA模型与原始的LLaMA-7b模型进行比较，并显示几乎在所有方面它们都变得更一致，无论是在它们的表示还是在零射击和下游任务中的预测方面。我们通过对事实回忆的机械分析来解释这些改进。
+                            id="id2.id1.1">一致性</span>的影响，即语言模型对输入中的小扰动的敏感性。我们将10个经过指令微调的LLaMA模型与原始的LLaMA-7b模型进行比较，并显示几乎在所有方面它们都变得更一致，无论是在它们的表示还是在零样本和下游任务中的预测方面。我们通过对事实回忆的机械分析来解释这些改进。
                     </p>
                 </div>
                 <section class="ltx_section" id="S1">
@@ -226,7 +226,7 @@
                         <p class="ltx_p" id="S1.p1.1">
                             大语言模型（LLMs）通常通过一般目标进行训练，例如下一个令牌的预测，但通常需要进一步训练才能使模型成为有用的助手。最近的研究表明，所谓的<span
                                 class="ltx_text ltx_font_italic"
-                                id="S1.p1.1.1">指示调整</span>——对用户交互进行监督微调——通过调整LLMs以符合用户意图和期望，使其在一系列任务上实现良好的零射击性能<cite
+                                id="S1.p1.1.1">指示微调</span>——对用户交互进行监督微调——通过微调LLMs以符合用户意图和期望，使其在一系列任务上实现良好的零样本性能<cite
                                 class="ltx_cite ltx_citemacro_cite">Wei et al. (<a class="ltx_ref"
                                     href="https://arxiv.org/html/2404.15206v1#bib.bib37" title="">2022</a>); Sanh et al.
                                 (<a class="ltx_ref" href="https://arxiv.org/html/2404.15206v1#bib.bib27"
@@ -247,11 +247,11 @@
                                     href="https://arxiv.org/html/2404.15206v1#bib.bib20"
                                     title="">2023</a>)</cite>进行了生成质量的评估；而<cite class="ltx_cite ltx_citemacro_citet">Wang
                                 et al. (<a class="ltx_ref" href="https://arxiv.org/html/2404.15206v1#bib.bib34"
-                                    title="">2023b</a>)</cite>通过测量它们在零射击和少射击问答上的准确性来评估IFT模型的能力，发现根据使用的数据集，IFT模型在不同任务上表现出好坏不等。
+                                    title="">2023b</a>)</cite>通过测量它们在零样本和少样本问答上的准确性来评估IFT模型的能力，发现根据使用的数据集，IFT模型在不同任务上表现出好坏不等。
                         </p>
                     </div>
                     <div class="ltx_para" id="S1.p2">
-                        <p class="ltx_p" id="S1.p2.1">这就提出了一个问题：指令调整究竟如何改变LLMs？<cite
+                        <p class="ltx_p" id="S1.p2.1">这就提出了一个问题：指令微调究竟如何改变LLMs？<cite
                                 class="ltx_cite ltx_citemacro_citet">Lin et al. (<a class="ltx_ref"
                                     href="https://arxiv.org/html/2404.15206v1#bib.bib21"
                                     title="">2023</a>)</cite>从解码和标记分布的变化角度研究了这个问题，发现大多数差异在于文体标记，因此认为IFT主要教模型像助手一样交谈。然而，指令数据集已经被创建为任务的文本化表达，因此数据将包含多个表面形式来编码相同的预期行为（参见图<a
@@ -467,13 +467,16 @@
                                                     id="S2.T1.1.1.2.1.1">Model</th>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="S2.T1.1.1.2.1.2">
                                                     <span class="ltx_text ltx_font_smallcaps"
-                                                        id="S2.T1.1.1.2.1.2.1">MRPC</span></td>
+                                                        id="S2.T1.1.1.2.1.2.1">MRPC</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="S2.T1.1.1.2.1.3">
                                                     <span class="ltx_text ltx_font_smallcaps"
-                                                        id="S2.T1.1.1.2.1.3.1">TaPaCo</span></td>
+                                                        id="S2.T1.1.1.2.1.3.1">TaPaCo</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="S2.T1.1.1.2.1.4">
                                                     <span class="ltx_text ltx_font_smallcaps"
-                                                        id="S2.T1.1.1.2.1.4.1">ParaRel</span></td>
+                                                        id="S2.T1.1.1.2.1.4.1">ParaRel</span>
+                                                </td>
                                             </tr>
                                             <tr class="ltx_tr" id="S2.T1.1.1.3.2" style="background-color:#E6E6E6;">
                                                 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t"
@@ -482,7 +485,8 @@
                                                 </th>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="S2.T1.1.1.3.2.2">
                                                     <span class="ltx_text ltx_font_bold" id="S2.T1.1.1.3.2.2.1"
-                                                        style="background-color:#E6E6E6;">0.010</span></td>
+                                                        style="background-color:#E6E6E6;">0.010</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="S2.T1.1.1.3.2.3">
                                                     <span class="ltx_ERROR undefined"
                                                         id="S2.T1.1.1.3.2.3.1">\ul</span><span class="ltx_text"
@@ -491,7 +495,8 @@
                                                 </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="S2.T1.1.1.3.2.4">
                                                     <span class="ltx_text ltx_font_bold" id="S2.T1.1.1.3.2.4.1"
-                                                        style="background-color:#E6E6E6;">0.474</span></td>
+                                                        style="background-color:#E6E6E6;">0.474</span>
+                                                </td>
                                             </tr>
                                             <tr class="ltx_tr" id="S2.T1.1.1.4.3">
                                                 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t"
@@ -2594,7 +2599,7 @@
                 </section>
                 <div class="ltx_pagination ltx_role_newpage"></div>
                 <section class="ltx_appendix" id="A1">
-                    <h2 class="ltx_title ltx_title_appendix"><span class="ltx_tag ltx_tag_appendix">附录A </span>指令调整数据集
+                    <h2 class="ltx_title ltx_title_appendix"><span class="ltx_tag ltx_tag_appendix">附录A </span>指令微调数据集
                     </h2>
                     <div class="ltx_para" id="A1.p1">
                         <p class="ltx_p" id="A1.p1.1">我们使用由<cite class="ltx_cite ltx_citemacro_citet">Wang et al. (<a
@@ -2602,7 +2607,7 @@
                                     title="">2023a</a>)</cite><span class="ltx_note ltx_role_footnote"
                                 id="footnote11"><sup class="ltx_note_mark">11</sup><span class="ltx_note_outer"><span
                                         class="ltx_note_content"><sup class="ltx_note_mark">11</sup><span
-                                            class="ltx_tag ltx_tag_note">11</span>我们不评估Code-Alpaca数据集，因为它侧重于代码生成，也不评估Self-Instruct，因为我们包括了改进版本Alpaca。</span></span></span>训练和发布的模型，在这里我们描述了用于微调的每个数据集。这些数据集已经用于训练其他指令调整的模型，但我们只评估由<cite
+                                            class="ltx_tag ltx_tag_note">11</span>我们不评估Code-Alpaca数据集，因为它侧重于代码生成，也不评估Self-Instruct，因为我们包括了改进版本Alpaca。</span></span></span>训练和发布的模型，在这里我们描述了用于微调的每个数据集。这些数据集已经用于训练其他指令微调的模型，但我们只评估由<cite
                                 class="ltx_cite ltx_citemacro_citet">Wang et al. (<a class="ltx_ref"
                                     href="https://arxiv.org/html/2404.15206v1#bib.bib33"
                                     title="">2023a</a>)</cite>发布的数据集，因为这样我们可以确保所有模型的训练和格式设置是相同的。</p>
@@ -4027,7 +4032,7 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                     class="ltx_text ltx_font_smallcaps"
                                     id="A2.SS2.p1.1.3">ParaRel</span>输入是较短的短语，应以事实方式完成。对于<span
                                     class="ltx_text ltx_font_smallcaps"
-                                    id="A2.SS2.p1.1.4">ParaRel</span>示例，我们仅使用替换了主语但未替换客体的模板，因为我们不想衡量客体的接近程度或远离程度，而是对重述输入的一般表示。对于经过指令调整的模型，我们遵循它们进行微调时的对话格式。具体的模板在表<a
+                                    id="A2.SS2.p1.1.4">ParaRel</span>示例，我们仅使用替换了主语但未替换客体的模板，因为我们不想衡量客体的接近程度或远离程度，而是对重述输入的一般表示。对于经过指令微调的模型，我们遵循它们进行微调时的对话格式。具体的模板在表<a
                                     class="ltx_ref" href="https://arxiv.org/html/2404.15206v1#A1.T3"
                                     title="Table 3 ‣ Baize (Xu et al., 2023) ‣ Appendix A Instruction Tuning Datasets ‣ Does Instruction Tuning Make LLMs More Consistent?"><span
                                         class="ltx_text ltx_ref_tag">3</span></a>中呈现。</p>
@@ -4172,13 +4177,16 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                                         style="background-color:#E6E6E6;">T5-XL (base model)</span></th>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T4.1.1.3.1.2">
                                                     <span class="ltx_text" id="A2.T4.1.1.3.1.2.1"
-                                                        style="background-color:#E6E6E6;">1.24e-04</span></td>
+                                                        style="background-color:#E6E6E6;">1.24e-04</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T4.1.1.3.1.3">
                                                     <span class="ltx_text" id="A2.T4.1.1.3.1.3.1"
-                                                        style="background-color:#E6E6E6;">1.33e-03</span></td>
+                                                        style="background-color:#E6E6E6;">1.33e-03</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T4.1.1.3.1.4">
                                                     <span class="ltx_text" id="A2.T4.1.1.3.1.4.1"
-                                                        style="background-color:#E6E6E6;">3.71e-03</span></td>
+                                                        style="background-color:#E6E6E6;">3.71e-03</span>
+                                                </td>
                                             </tr>
                                             <tr class="ltx_tr" id="A2.T4.1.1.4.2">
                                                 <th class="ltx_td ltx_align_left ltx_th ltx_th_row"
@@ -4316,22 +4324,28 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                                         style="background-color:#E6E6E6;">T5-XL (base model)</span></th>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T5.3.3.5.1.2">
                                                     <span class="ltx_text" id="A2.T5.3.3.5.1.2.1"
-                                                        style="background-color:#E6E6E6;">24.9</span></td>
+                                                        style="background-color:#E6E6E6;">24.9</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T5.3.3.5.1.3">
                                                     <span class="ltx_text" id="A2.T5.3.3.5.1.3.1"
-                                                        style="background-color:#E6E6E6;">2.1</span></td>
+                                                        style="background-color:#E6E6E6;">2.1</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T5.3.3.5.1.4">
                                                     <span class="ltx_text" id="A2.T5.3.3.5.1.4.1"
-                                                        style="background-color:#E6E6E6;">48.1</span></td>
+                                                        style="background-color:#E6E6E6;">48.1</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T5.3.3.5.1.5">
                                                     <span class="ltx_text" id="A2.T5.3.3.5.1.5.1"
-                                                        style="background-color:#E6E6E6;">75.5</span></td>
+                                                        style="background-color:#E6E6E6;">75.5</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T5.3.3.5.1.6">
                                                     <span class="ltx_text" id="A2.T5.3.3.5.1.6.1"
-                                                        style="background-color:#E6E6E6;">65.4</span></td>
+                                                        style="background-color:#E6E6E6;">65.4</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T5.3.3.5.1.7">
                                                     <span class="ltx_text" id="A2.T5.3.3.5.1.7.1"
-                                                        style="background-color:#E6E6E6;">89.4 / 99.7</span></td>
+                                                        style="background-color:#E6E6E6;">89.4 / 99.7</span>
+                                                </td>
                                             </tr>
                                             <tr class="ltx_tr" id="A2.T5.3.3.6.2">
                                                 <th class="ltx_td ltx_align_left ltx_th ltx_th_row"
@@ -4390,7 +4404,8 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                 <span class="ltx_text ltx_font_smallcaps" id="A2.T5.5.1">BECEL</span>
                                 一致性在改写/否定中跨分类任务平均（表<a class="ltx_ref" href="https://arxiv.org/html/2404.15206v1#A2.T6"
                                     title="Table 6 ‣ B.3 Results on Other Models ‣ Appendix B Cosine Distance Details ‣ Does Instruction Tuning Make LLMs More Consistent?"><span
-                                        class="ltx_text ltx_ref_tag">6</span></a>中每个任务的结果）。</figcaption>
+                                        class="ltx_text ltx_ref_tag">6</span></a>中每个任务的结果）。
+                            </figcaption>
                         </figure>
                     </section>
                     <section class="ltx_subsection" id="A2.SS3">
@@ -4453,19 +4468,23 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                                 </th>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.2">
                                                     <span class="ltx_text" id="A2.T6.1.1.3.3.2.1"
-                                                        style="background-color:#E6E6E6;">0.737</span></td>
+                                                        style="background-color:#E6E6E6;">0.737</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.3">
                                                     <span class="ltx_text" id="A2.T6.1.1.3.3.3.1"
-                                                        style="background-color:#E6E6E6;">0.843</span></td>
+                                                        style="background-color:#E6E6E6;">0.843</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.4">
                                                     <span class="ltx_text" id="A2.T6.1.1.3.3.4.1"
-                                                        style="background-color:#E6E6E6;">0.834</span></td>
+                                                        style="background-color:#E6E6E6;">0.834</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_r ltx_border_t"
                                                     id="A2.T6.1.1.3.3.5"><span class="ltx_text" id="A2.T6.1.1.3.3.5.1"
                                                         style="background-color:#E6E6E6;">0.870</span></td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.6">
                                                     <span class="ltx_text" id="A2.T6.1.1.3.3.6.1"
-                                                        style="background-color:#E6E6E6;">0.731</span></td>
+                                                        style="background-color:#E6E6E6;">0.731</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.7">
                                                     <span class="ltx_ERROR undefined"
                                                         id="A2.T6.1.1.3.3.7.1">\ul</span><span class="ltx_text"
@@ -4474,7 +4493,8 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                                 </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.8">
                                                     <span class="ltx_text ltx_font_bold" id="A2.T6.1.1.3.3.8.1"
-                                                        style="background-color:#E6E6E6;">0.471</span></td>
+                                                        style="background-color:#E6E6E6;">0.471</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_r ltx_border_t"
                                                     id="A2.T6.1.1.3.3.9">
                                                     <span class="ltx_ERROR undefined"
@@ -4484,7 +4504,8 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                                 </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.10">
                                                     <span class="ltx_text" id="A2.T6.1.1.3.3.10.1"
-                                                        style="background-color:#E6E6E6;">0.877</span></td>
+                                                        style="background-color:#E6E6E6;">0.877</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.11">
                                                     <span class="ltx_ERROR undefined"
                                                         id="A2.T6.1.1.3.3.11.1">\ul</span><span class="ltx_text"
@@ -4503,10 +4524,12 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                                         style="background-color:#E6E6E6;">0.770</span></td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.14">
                                                     <span class="ltx_text" id="A2.T6.1.1.3.3.14.1"
-                                                        style="background-color:#E6E6E6;">0.883</span></td>
+                                                        style="background-color:#E6E6E6;">0.883</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.15">
                                                     <span class="ltx_text" id="A2.T6.1.1.3.3.15.1"
-                                                        style="background-color:#E6E6E6;">0.900</span></td>
+                                                        style="background-color:#E6E6E6;">0.900</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.3.3.16">
                                                     <span class="ltx_ERROR undefined"
                                                         id="A2.T6.1.1.3.3.16.1">\ul</span><span class="ltx_text"
@@ -4672,7 +4695,8 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                                 <td class="ltx_td ltx_align_right" id="A2.T6.1.1.9.9.4">0.831</td>
                                                 <td class="ltx_td ltx_align_right ltx_border_r" id="A2.T6.1.1.9.9.5">
                                                     <span class="ltx_text ltx_font_bold"
-                                                        id="A2.T6.1.1.9.9.5.1">0.860</span></td>
+                                                        id="A2.T6.1.1.9.9.5.1">0.860</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right" id="A2.T6.1.1.9.9.6"><span
                                                         class="ltx_text ltx_font_bold"
                                                         id="A2.T6.1.1.9.9.6.1">0.662</span></td>
@@ -4766,7 +4790,8 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                                 <td class="ltx_td ltx_align_right" id="A2.T6.1.1.12.12.8">0.582</td>
                                                 <td class="ltx_td ltx_align_right ltx_border_r" id="A2.T6.1.1.12.12.9">
                                                     <span class="ltx_text ltx_font_bold"
-                                                        id="A2.T6.1.1.12.12.9.1">0.661</span></td>
+                                                        id="A2.T6.1.1.12.12.9.1">0.661</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right" id="A2.T6.1.1.12.12.10">0.862</td>
                                                 <td class="ltx_td ltx_align_right" id="A2.T6.1.1.12.12.11">0.886</td>
                                                 <td class="ltx_td ltx_align_right" id="A2.T6.1.1.12.12.12">0.362</td>
@@ -4824,55 +4849,68 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                                 </th>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.2">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.2.1"
-                                                        style="background-color:#E6E6E6;">0.939</span></td>
+                                                        style="background-color:#E6E6E6;">0.939</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.3">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.3.1"
-                                                        style="background-color:#E6E6E6;">0.913</span></td>
+                                                        style="background-color:#E6E6E6;">0.913</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.4">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.4.1"
-                                                        style="background-color:#E6E6E6;">0.940</span></td>
+                                                        style="background-color:#E6E6E6;">0.940</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_r ltx_border_t"
                                                     id="A2.T6.1.1.14.14.5"><span class="ltx_text"
                                                         id="A2.T6.1.1.14.14.5.1"
                                                         style="background-color:#E6E6E6;">0.929</span></td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.6">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.6.1"
-                                                        style="background-color:#E6E6E6;">0.837</span></td>
+                                                        style="background-color:#E6E6E6;">0.837</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.7">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.7.1"
-                                                        style="background-color:#E6E6E6;">0.948</span></td>
+                                                        style="background-color:#E6E6E6;">0.948</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.8">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.8.1"
-                                                        style="background-color:#E6E6E6;">0.758</span></td>
+                                                        style="background-color:#E6E6E6;">0.758</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_r ltx_border_t"
                                                     id="A2.T6.1.1.14.14.9"><span class="ltx_text"
                                                         id="A2.T6.1.1.14.14.9.1"
                                                         style="background-color:#E6E6E6;">0.812</span></td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.10">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.10.1"
-                                                        style="background-color:#E6E6E6;">0.886</span></td>
+                                                        style="background-color:#E6E6E6;">0.886</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.11">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.11.1"
-                                                        style="background-color:#E6E6E6;">0.896</span></td>
+                                                        style="background-color:#E6E6E6;">0.896</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.12">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.12.1"
-                                                        style="background-color:#E6E6E6;">0.793</span></td>
+                                                        style="background-color:#E6E6E6;">0.793</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_r ltx_border_t"
                                                     id="A2.T6.1.1.14.14.13"><span class="ltx_text"
                                                         id="A2.T6.1.1.14.14.13.1"
                                                         style="background-color:#E6E6E6;">0.838</span></td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.14">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.14.1"
-                                                        style="background-color:#E6E6E6;">0.886</span></td>
+                                                        style="background-color:#E6E6E6;">0.886</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.15">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.15.1"
-                                                        style="background-color:#E6E6E6;">0.886</span></td>
+                                                        style="background-color:#E6E6E6;">0.886</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.16">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.16.1"
-                                                        style="background-color:#E6E6E6;">0.132</span></td>
+                                                        style="background-color:#E6E6E6;">0.132</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.14.14.17">
                                                     <span class="ltx_text" id="A2.T6.1.1.14.14.17.1"
-                                                        style="background-color:#E6E6E6;">0.679</span></td>
+                                                        style="background-color:#E6E6E6;">0.679</span>
+                                                </td>
                                             </tr>
                                             <tr class="ltx_tr" id="A2.T6.1.1.15.15">
                                                 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r"
@@ -4904,55 +4942,68 @@ s_{k}\in p_{i},\;s_{l}\in p_{i}\end{subarray}}^{K}\cos(s_{k},s_{l})" class="ltx_
                                                         style="background-color:#E6E6E6;">Falcon-7b</span></th>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.2">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.2.1"
-                                                        style="background-color:#E6E6E6;">0.733</span></td>
+                                                        style="background-color:#E6E6E6;">0.733</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.3">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.3.1"
-                                                        style="background-color:#E6E6E6;">0.834</span></td>
+                                                        style="background-color:#E6E6E6;">0.834</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.4">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.4.1"
-                                                        style="background-color:#E6E6E6;">0.753</span></td>
+                                                        style="background-color:#E6E6E6;">0.753</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_r ltx_border_t"
                                                     id="A2.T6.1.1.16.16.5"><span class="ltx_text"
                                                         id="A2.T6.1.1.16.16.5.1"
                                                         style="background-color:#E6E6E6;">0.867</span></td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.6">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.6.1"
-                                                        style="background-color:#E6E6E6;">0.757</span></td>
+                                                        style="background-color:#E6E6E6;">0.757</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.7">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.7.1"
-                                                        style="background-color:#E6E6E6;">0.851</span></td>
+                                                        style="background-color:#E6E6E6;">0.851</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.8">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.8.1"
-                                                        style="background-color:#E6E6E6;">0.444</span></td>
+                                                        style="background-color:#E6E6E6;">0.444</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_r ltx_border_t"
                                                     id="A2.T6.1.1.16.16.9"><span class="ltx_text"
                                                         id="A2.T6.1.1.16.16.9.1"
                                                         style="background-color:#E6E6E6;">0.697</span></td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.10">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.10.1"
-                                                        style="background-color:#E6E6E6;">0.881</span></td>
+                                                        style="background-color:#E6E6E6;">0.881</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.11">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.11.1"
-                                                        style="background-color:#E6E6E6;">0.782</span></td>
+                                                        style="background-color:#E6E6E6;">0.782</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.12">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.12.1"
-                                                        style="background-color:#E6E6E6;">0.148</span></td>
+                                                        style="background-color:#E6E6E6;">0.148</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_r ltx_border_t"
                                                     id="A2.T6.1.1.16.16.13"><span class="ltx_text"
                                                         id="A2.T6.1.1.16.16.13.1"
                                                         style="background-color:#E6E6E6;">0.793</span></td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.14">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.14.1"
-                                                        style="background-color:#E6E6E6;">0.877</span></td>
+                                                        style="background-color:#E6E6E6;">0.877</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.15">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.15.1"
-                                                        style="background-color:#E6E6E6;">0.893</span></td>
+                                                        style="background-color:#E6E6E6;">0.893</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.16">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.16.1"
-                                                        style="background-color:#E6E6E6;">0.065</span></td>
+                                                        style="background-color:#E6E6E6;">0.065</span>
+                                                </td>
                                                 <td class="ltx_td ltx_align_right ltx_border_t" id="A2.T6.1.1.16.16.17">
                                                     <span class="ltx_text" id="A2.T6.1.1.16.16.17.1"
-                                                        style="background-color:#E6E6E6;">0.659</span></td>
+                                                        style="background-color:#E6E6E6;">0.659</span>
+                                                </td>
                                             </tr>
                                             <tr class="ltx_tr" id="A2.T6.1.1.17.17">
                                                 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r"
