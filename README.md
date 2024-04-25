@@ -6,7 +6,7 @@
 
 | 论文ID | 标题 | 原文链接 | 发布时间 |
 | ------ | ---- | -------- | -------- |
-| 2404.14387 | [大语言模型自我进化调查](https://1openwindow.github.io/llm-chinese-essay/essay/2404.14387v1/) | [原文](https://arxiv.org/html/2404.14387v1/) | 22 Apr 2024 |
+| 2404.14387 | [大语言模型自我进化调查](https://1openwindow.github.io/llm-chinese-essay/essay/2404.14387v1/) | [原文](https://arxiv.org/html/2404.14387v1/) | 2024-04-23 |
 | 2404.15206 | [指导微调是否使LLMs更加一致？](https://1openwindow.github.io/llm-chinese-essay/essay/2404_15206v1/) | [原文](https://arxiv.org/html/2404.15206v1/) | 2024-04-23 |
 | 2404.14043 | [LLMs知道他们需要什么：利用缺失信息引导框架来增强检索增强生成](https://1openwindow.github.io/llm-chinese-essay/essay/2404_14043v1/) | [原文](https://arxiv.org/html/2404.14043v1/) | 2024-04-22 |
 | 2404.13033 | [样本设计工程：LLM下游微调的良好样本的实证研究](https://1openwindow.github.io/llm-chinese-essay/essay/2404_13033v1/) | [原文](https://arxiv.org/html/2404.13033v1) | 2024-04-19 |
