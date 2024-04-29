@@ -17,6 +17,7 @@
 
 | 论文ID | 中文 | 原文 | 发布时间 |
 | ------ | ---- | -------- | -------- |
+| 2404.17513 | [对大型语言模型的事件推理进行全面评估](https://1openwindow.github.io/llm-chinese-essay/essay/2404_17513v1/) | [A Comprehensive Evaluation on Event Reasoning of Large Language Models](https://arxiv.org/html/2404.17513v1/) | 2024-04-26 |
 | 2404.14387 | [大语言模型自我进化调查](https://1openwindow.github.io/llm-chinese-essay/essay/2404_14387v1/) | [A Survey on Self-Evolution of Large Language Models](https://arxiv.org/html/2404.14387v1/) | 2024-04-23 |
 | 2404.15206 | [指导微调是否使LLMs更加一致？](https://1openwindow.github.io/llm-chinese-essay/essay/2404_15206v1/) | [A Survey on Self-Evolution of Large Language Models](https://arxiv.org/html/2404.15206v1/) | 2024-04-23 |
 | 2404.14043 | [LLMs知道他们需要什么：利用缺失信息引导框架来增强检索增强生成](https://1openwindow.github.io/llm-chinese-essay/essay/2404_14043v1/) | [LLMs Know What They Need: Leveraging a Missing Information Guided Framework to Empower Retrieval-Augmented Generation](https://arxiv.org/html/2404.14043v1/) | 2024-04-22 |
