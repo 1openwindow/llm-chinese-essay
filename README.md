@@ -17,7 +17,7 @@
 
 | 论文ID | 中文 | 原文 | 发布时间 |
 | ------ | ---- | -------- | -------- |
-| 2405.01116 | ["在上下文学习"或：我如何学会不再担心并热爱"应用信息检索"](https://1openwindow.github.io/llm-chinese-essay/essay/2405_01116v1/) | [原文](https://arxiv.org/html/2405.01116v1/) | 2024-05-02 |
+| 2405.01116 | ["在上下文学习"或：我如何学会不再担心并热爱"应用信息检索"](https://1openwindow.github.io/llm-chinese-essay/essay/2405_01116v1/) | ["In-Context Learning" or: How I learned to stop worrying and love "Applied Information Retrieval"](https://arxiv.org/html/2405.01116v1/) | 2024-05-02 |
 | 2404.17513 | [对大型语言模型的事件推理进行全面评估](https://1openwindow.github.io/llm-chinese-essay/essay/2404_17513v1/) | [A Comprehensive Evaluation on Event Reasoning of Large Language Models](https://arxiv.org/html/2404.17513v1/) | 2024-04-26 |
 | 2404.14387 | [大语言模型自我进化调查](https://1openwindow.github.io/llm-chinese-essay/essay/2404_14387v1/) | [A Survey on Self-Evolution of Large Language Models](https://arxiv.org/html/2404.14387v1/) | 2024-04-23 |
 | 2404.15206 | [指导微调是否使LLMs更加一致？](https://1openwindow.github.io/llm-chinese-essay/essay/2404_15206v1/) | [A Survey on Self-Evolution of Large Language Models](https://arxiv.org/html/2404.15206v1/) | 2024-04-23 |
